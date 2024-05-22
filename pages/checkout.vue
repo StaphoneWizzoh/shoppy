@@ -1,13 +1,7 @@
 <template>
-  <div>
-    
-  </div>
+    <div>
+        <h1>This is the checkout page</h1>
+    </div>
 </template>
 
-<script lang="ts" setup>
-
-</script>
-
-<style>
-
-</style>
+<script lang="ts" setup></script>

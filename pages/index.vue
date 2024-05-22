@@ -1,13 +1,9 @@
 <template>
-  <div>
-    
-  </div>
+    <div>
+        <h1>this is the landing page</h1>
+    </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

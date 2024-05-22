@@ -1,0 +1,28 @@
+<template>
+    <div
+        class="w-screen h-16 px-10 py-2 mb-2 flex items-center justify-between shadow-custom"
+    >
+        <!-- title/ logo section -->
+        <NuxtLink to="/" class="font-bold text-2xl"> Shoppy </NuxtLink>
+
+        <!-- Page Name Section -->
+        <NuxtLink to="/">Home</NuxtLink>
+        <!-- Icons section -->
+        <div>
+            <NuxtLink to="/checkout" class="relative">
+                <Icon
+                    name="ic:baseline-add-shopping-cart"
+                    size="24"
+                    color="#000"
+                />
+                <span
+                    class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                >
+                    10
+                </span>
+            </NuxtLink>
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup></script>
