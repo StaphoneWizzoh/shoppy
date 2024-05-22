@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-screen h-16 px-10 py-2 mb-2 flex items-center justify-between shadow-custom"
+        class="w-screen sticky top-0 z-50 h-16 px-10 py-2 mb-2 flex items-center justify-between shadow-custom bg-opacity-100"
     >
         <!-- title/ logo section -->
         <NuxtLink to="/" class="font-bold text-2xl"> Shoppy </NuxtLink>
