@@ -12,7 +12,9 @@ export const useCartStore = defineStore({
         },
 
         totalCartAmount(state) {
-            return state.total;
+            return this.items.reduce(
+                (total, item) => (total + item.price * item.quantity, 0)
+            );
         },
     },
     actions: {
