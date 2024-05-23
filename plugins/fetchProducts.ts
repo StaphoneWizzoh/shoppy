@@ -5,7 +5,6 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
     try {
         await productStore.fetchProducts();
-        console.log("Products fetched successfully");
     } catch (error) {
         console.error("Error fetching products:", error);
     }
