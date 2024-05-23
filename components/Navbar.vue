@@ -18,11 +18,15 @@
                 <span
                     class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
                 >
-                    10
+                    {{ store.itemsNumber }}
                 </span>
             </NuxtLink>
         </div>
     </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useCartStore } from "~/stores/CartStore";
+
+const store = useCartStore();
+</script>
