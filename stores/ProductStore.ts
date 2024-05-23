@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -18,7 +18,21 @@ export const useProductStore = defineStore({
             this.products = await prisma.product.findMany();
         },
 
-        async updateProductQuantity(id: number, newQuantity: number) {},
+        async fetchProductById(id: number) {
+            const product = await prisma.product.findUnique({
+                where: { id },
+            });
+            return product;
+        },
+
+        async updateProductQuantity(id: number, newQuantity: number) {
+            const index = this.products.findIndex(
+                (product) => product.id === id
+            );
+            if (index !== -1) {
+                this.products[index].quantity = newQuantity;
+            }
+        },
         async updateProduct(id: number, updatedProduct: any) {
             const product = await prisma.product.update({
                 where: { id },
