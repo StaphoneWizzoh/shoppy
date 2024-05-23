@@ -1,20 +1,31 @@
 <template>
     <div class="w-90 h-90 flex-col items-center justify-center">
-        <img
-            src="https://placehold.co/400"
-            alt="placeholder"
-            class="lg:w-50 lg:h-40"
-        />
+        <img :src="imgUrl" alt="placeholder" class="lg:w-50 lg:h-40" />
         <div class="flex-col justify-center items-center">
-            <p>Product description</p>
-            <p class="text-2xl font-semibold">KSH 5000</p>
+            <p>{{ name }}</p>
+            <p class="text-2xl font-semibold">KSH {{ price }}</p>
             <button
-                class="bg-black text-white w-16 h-6 text-sm my-auto mx-auto"
+                class="bg-black text-white w-24 h-6 text-sm my-auto mx-auto"
+                @click="
+                    cartStore.addItem({
+                        id: id,
+                        name: name,
+                        price: price,
+                        imgUrl: imgUrl,
+                        quantity: quantity - 1,
+                    })
+                "
             >
-                Buy Now
+                Add to Cart
             </button>
         </div>
     </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useCartStore } from "#imports";
+
+const cartStore = useCartStore();
+
+defineProps(["id", "name", "price", "imgUrl", "quantity"]);
+</script>
