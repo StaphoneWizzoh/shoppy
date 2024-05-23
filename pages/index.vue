@@ -17,4 +17,6 @@
     </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useProductStore } from "#imports";
+</script>
