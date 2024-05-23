@@ -4,7 +4,9 @@
         <div class="flex-col justify-center items-center">
             <p>{{ name }}</p>
             <p class="text-2xl font-semibold">KSH {{ price }}</p>
+            <div></div>
             <button
+                v-if="!cartStore.isItemInCart(id)"
                 class="bg-black text-white w-24 h-6 text-sm my-auto mx-auto"
                 @click="
                     cartStore.addItem({
@@ -17,6 +19,13 @@
                 "
             >
                 Add to Cart
+            </button>
+            <button
+                v-else
+                class="bg-black text-white w-24 h-6 text-sm my-auto mx-auto"
+                @click="cartStore.removeItem(id)"
+            >
+                Remove Item
             </button>
         </div>
     </div>
