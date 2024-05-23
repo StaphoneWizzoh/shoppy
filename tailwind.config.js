@@ -13,6 +13,9 @@ export default {
             boxShadow: {
                 custom: "0 4px 4px rgba(0, 0, 0, 0.25)",
             },
+            flex: {
+                half: "0 0 50%",
+            },
         },
     },
     plugins: [],
