@@ -11,7 +11,7 @@
                 :name="product.name"
                 :price="product.price"
                 :imgUrl="product.imgUrl"
-                :quantity="products.quantity"
+                :quantity="product.quantity"
             />
         </div>
     </div>
