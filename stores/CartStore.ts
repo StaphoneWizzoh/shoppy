@@ -11,10 +11,16 @@ export const useCartStore = defineStore({
             return state.items.length;
         },
 
+        isItemInCart: (state) => (itemId: number) => {
+            return state.items.some((item) => item.id === itemId);
+        },
+
+        allItems(state) {
+            return toRaw(state.items);
+        },
+
         totalCartAmount(state) {
-            return this.items.reduce(
-                (total, item) => (total + item.price * item.quantity, 0)
-            );
+            return this.items.reduce((total, item) => total + item.price, 0);
         },
     },
     actions: {
