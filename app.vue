@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="flex-col">
         <Navbar />
-        <NuxtPage />
+        <div class="pb-4 flex-1 overflow-hidden">
+            <NuxtPage />
+        </div>
         <Footer />
     </div>
 </template>
